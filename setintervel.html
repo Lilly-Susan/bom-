@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #demo{
+        width: 300px;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid #000;
+        font-size: 18px;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        color: indianred;
+    }
+    #pause{
+        width:250px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        margin: 50px auto;
+        background-color: darkred;
+        font-size: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="demo">
+
+    </div>
+    <div id="pause">stop watch</div>
+
+    <script>
+        window.onload = function(){
+            let de = document.getElementById("demo");
+            let pau = document.getElementById("pause");
+            function mytimer(){
+                const date = new Date();
+                de.innerHTML= date.toLocaleTimeString();
+            }
+            const myintervel = setInterval(mytimer,1000);
+            pau.addEventListener('click',stopwatch);
+            function stopwatch(){
+                clearInterval(myintervel);
+            }
+            }
+        
+    </script>
+</body>
+</html>
